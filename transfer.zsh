@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 transfer()
 {
     usage="Usage: transfer /path/to/file"
@@ -30,5 +28,3 @@ transfer()
     printf '%b\n' "$(cat $tmpfile)"
     rm -f $tmpfile
 }
-
-transfer "$@"
