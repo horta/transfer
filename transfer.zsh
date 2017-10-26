@@ -5,7 +5,7 @@ transfer()
 {
     if [ $# -eq 0 ]
     then
-        echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+        echo -e "No arguments specified. Usage: transfer /path/to/file"
         return 1
     fi
     tmpfile=$( mktemp -t transferXXX )
