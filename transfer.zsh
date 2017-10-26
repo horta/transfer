@@ -1,11 +1,22 @@
 #!/usr/bin/env zsh
 
-
 transfer()
 {
+    usage="Usage: transfer /path/to/file"
     if [ $# -eq 0 ]
     then
-        echo -e "No arguments specified. Usage: transfer /path/to/file"
+        echo -e "No arguments specified. $usage"
+        return 1
+    fi
+    if [ $# -gt 1 ]
+    then
+        echo -e "More than one argument specified. $usage"
+        return 1
+    fi
+    if [ ! -f "$1" ]
+    then
+        x=$(printf '%q' "$1")
+        echo "File $x does not exist."
         return 1
     fi
     tmpfile=$( mktemp -t transferXXX )
