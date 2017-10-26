@@ -31,3 +31,4 @@ transfer()
     rm -f $tmpfile
 }
 
+transfer "$@"
