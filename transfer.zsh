@@ -25,6 +25,6 @@ transfer()
     else
         curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile
     fi
-    printf '%b\n' "$(cat $tmpfile)"
+    printf '%b' "$(cat $tmpfile)"
     rm -f $tmpfile
 }
